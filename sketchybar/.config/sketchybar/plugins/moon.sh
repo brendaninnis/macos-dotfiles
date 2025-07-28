@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source "$HOME/.config/sketchybar/colors.sh"
+
 # Moon phase calculation using lunar cycle
 # Reference: Known new moon date (January 6, 2000 18:14 UTC)
 REFERENCE_NEW_MOON=947182440  # Unix timestamp for Jan 6, 2000 18:14 UTC
@@ -130,4 +132,5 @@ esac
 # Update sketchybar
 sketchybar --set "$NAME" \
     icon="$ICON" \
+    icon.color="$MOON_COLOR" \
     label="$PHASE_NAME in $ZODIAC_ICON"

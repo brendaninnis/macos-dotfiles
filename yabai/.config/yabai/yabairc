@@ -16,7 +16,7 @@ yabai -m config left_padding 4
 yabai -m config right_padding 4
 yabai -m config window_gap 4
 
-yabai -m config external_bar all:40:0
+yabai -m config external_bar all:36:0
 
 # Window opacity (optional)
 # yabai -m config window_opacity on
