@@ -1,0 +1,74 @@
+# Reload skhd configuration
+# This allows you to update your skhdrc and apply changes without restarting skhd
+ctrl + alt - r : skhd --reload
+
+# Focus window (using Vim-like HJKL directions)
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# Swap managed windows (move the currently focused window)
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+# Create/Destroy/Focus Spaces (Desktops)
+# Note: macOS limits native spaces to 16. Yabai can exceed this with SIP partially disabled.
+alt - 1 : yabai -m space --focus 1
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5
+alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
+alt - 8 : yabai -m space --focus 8
+alt - 9 : yabai -m space --focus 9
+alt - 0 : yabai -m space --focus 10
+
+alt - right : yabai -m space --focus next
+alt - left : yabai -m space --focus prev
+
+# Create a new space and focus it (requires 'jq' for parsing JSON output from yabai queries)
+# You might need to `brew install jq` if you don't have it.
+shift + alt - n : yabai -m space --create && \
+                 index="$(yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index')" && \
+                 yabai -m space --focus "${index}"
+
+# Destroy the focused (empty) space
+# This example ensures you don't destroy your last space or a space with windows
+shift + alt - d : yabai -m query --spaces --space | jq -re '."windows" | length == 0' && yabai -m space --destroy
+
+# Move window to another space
+shift + cmd - 1 : yabai -m window --space 1
+shift + cmd - 2 : yabai -m window --space 2
+# ... and so on
+
+shift + cmd - right : yabai -m window --space next
+shift + cmd - left : yabai -m window --space prev
+
+# Layout commands
+alt - q : yabai -m space --layout bsp # Set current space to Binary Space Partitioning
+alt - w : yabai -m space --layout float # Set current space to floating layout
+
+# Toggle window properties
+alt - t : yabai -m window --toggle float # Toggle window between tiled and floating
+alt - f : yabai -m window --toggle zoom-fullscreen # Toggle fullscreen for window
+
+# Balance window sizes within the current space
+alt - b : yabai -m space --balance
+
+# Resize windows (adjust values as needed)
+# Grow/Shrink left/right
+ctrl + alt - h : yabai -m window --resize left:-100:0
+ctrl + alt - l : yabai -m window --resize right:-100:0
+# Grow/Shrink up/down
+ctrl + alt - k : yabai -m window --resize top:0:-100
+ctrl + alt - j : yabai -m window --resize bottom:0:-100
+
+# You can also use "warp" instead of "swap" to move windows to empty spots in the tree.
+# shift + alt - h : yabai -m window --warp west
+# shift + alt - j : yabai -m window --warp south
+# shift + alt - k : yabai -m window --warp north
+# shift + alt - l : yabai -m window --warp east
