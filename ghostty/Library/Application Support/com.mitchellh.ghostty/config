@@ -49,6 +49,7 @@
 # ========================
 background-opacity = 0.9
 background-blur = 20
+background-image = /Users/brendaninnis/Library/Application Support/com.mitchellh.ghostty/backgrounds/ryuk.jpg
 
 # =========================
 # Theme
@@ -75,3 +76,4 @@ palette = 15=#ffffff
 # Font
 # =======================
 font-family = Hack Nerd Font
+font-size = 14
