@@ -3,6 +3,7 @@
 source "$HOME/.config/sketchybar/colors.sh"
 
 SSID=$(ipconfig getsummary "$(networksetup -listallhardwareports | awk '/Wi-Fi|AirPort/{getline; print $NF}')" | grep '  SSID : ' | awk -F ': ' '{print $2}')
+# IP unused at the moment
 IP=$(ipconfig getifaddr en0)
 
 if [[ -z "$SSID" ]]; then
@@ -11,7 +12,7 @@ if [[ -z "$SSID" ]]; then
     COLOR="$WIFI_DISCONNECTED"
 else
     ICON="󰤨" # Wi-Fi icon
-    LABEL="$SSID ($IP)"
+    LABEL="$SSID"
     COLOR="$WIFI_CONNECTED"
 fi
 

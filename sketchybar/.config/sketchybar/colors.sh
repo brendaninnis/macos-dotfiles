@@ -14,36 +14,36 @@ PURPLE=0xffcba6f7
 TEAL=0xff94e2d5
 
 # Background Colors
-BG_PRI=0xff1e1e2e               # Primary background (base)
-BG_SEC=0xff313244               # Secondary background (surface0)
-BG_TER=0xff45475a               # Tertiary background (surface1)
+BG_PRI=$BLACK             # Primary background (base) - Using BLACK
+BG_SEC=0xff313244         # Secondary background (surface0)
+BG_TER=0xff45475a         # Tertiary background (surface1)
 
-# Semantic Status Colors  
-SUCCESS=0xffa6e3a1              # Green - for positive states
-WARNING=0xfff9e2af              # Yellow - for warning states  
-ERROR=0xfff38ba8                # Red - for error states
-INFO=0xff89b4fa                 # Blue - for info states
+# Semantic Status Colors
+SUCCESS=$GREEN            # Green - for positive states
+WARNING=$YELLOW           # Yellow - for warning states
+ERROR=$RED                # Red - for error states
+INFO=$BLUE                # Blue - for info states
 
 # UI Element Colors
-ACCENT=0xff89b4fa               # Primary accent (blue)
-ACCENT_ALT=0xffcba6f7           # Alternative accent (purple)
-BORDER=0xff6c7086               # Border color (overlay0)
-INACTIVE=0xff6c7086             # Inactive elements
-ACTIVE=0xffcdd6f4               # Active text/icons
+ACCENT=$BLUE              # Primary accent (blue)
+ACCENT_ALT=$PURPLE        # Alternative accent (purple)
+BORDER=$GRAY              # Border color (overlay0) - Using GRAY
+INACTIVE=$GRAY            # Inactive elements - Using GRAY
+ACTIVE=$WHITE             # Active text/icons - Using WHITE
 
 # Transparency Variants
-BG_PRI_TRANS=0x88313244         # Semi-transparent backgrounds
-BG_SEC_TRANS=0x88585b70         # For floating elements
-BORDER_TRANS=0x44ffffff         # Subtle borders
+BG_PRI_TRANS=0x88313244   # Semi-transparent backgrounds
+BG_SEC_TRANS=0x88585b70   # For floating elements
+BORDER_TRANS=0x44ffffff   # Subtle borders
 
 # Item-specific semantic colors
-BATTERY_LOW=0xfff38ba8          # Red for low battery
-BATTERY_MED=0xfff9e2af          # Yellow for medium battery  
-BATTERY_HIGH=0xffa6e3a1         # Green for high battery
-BATTERY_CHARGING=0xff89b4fa     # Blue for charging
+BATTERY_LOW=$RED          # Red for low battery
+BATTERY_MED=$YELLOW       # Yellow for medium battery
+BATTERY_HIGH=$GREEN       # Green for high battery
+BATTERY_CHARGING=$BLUE    # Blue for charging
 
-WIFI_CONNECTED=0xffa6e3a1       # Green for connected
-WIFI_DISCONNECTED=0xfff38ba8    # Red for disconnected
-WIFI_WEAK=0xfff9e2af            # Yellow for weak signal
+WIFI_CONNECTED=$GREEN     # Green for connected
+WIFI_DISCONNECTED=$RED    # Red for disconnected
+WIFI_WEAK=$YELLOW         # Yellow for weak signal
 
-MOON_COLOR=0xfff9e2af           # Moon icon color
+MOON_COLOR=$YELLOW        # Moon icon color

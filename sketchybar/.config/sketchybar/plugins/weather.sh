@@ -119,5 +119,5 @@ is_day=$(echo $data | jq -r '.current.is_day')
 sketchybar -m \
     --set weather \
         icon="$icon" \
-        label="$CITY ${temp}°C"
+        label="${temp}°C"
 
